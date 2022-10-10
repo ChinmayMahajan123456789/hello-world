@@ -14,9 +14,9 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - uses: actions/checkout
+    - uses: actions/checkout@v1
     - name: Setup .NET Core
-      uses: actions/setup-dotnet
+      uses: actions/setup-dotnet@v2
       with:
         dotnet-version: ${{ env.DOTNET_VERSION }}
     - name: Install dependencies
