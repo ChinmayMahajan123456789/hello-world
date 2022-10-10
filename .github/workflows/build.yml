@@ -14,9 +14,9 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - uses: ChinmayMahajan123456789/hello-world
+    - uses: actions/checkout
     - name: Setup .NET Core
-      uses: ChinmayMahajan123456789/hello-world
+      uses: actions/setup-dotnet
       with:
         dotnet-version: ${{ env.DOTNET_VERSION }}
     - name: Install dependencies
