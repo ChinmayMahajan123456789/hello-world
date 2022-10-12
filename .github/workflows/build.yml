@@ -3,27 +3,29 @@ name: .NET Core Build
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
+      
 env:
   PUBLISH_PATH: '.'
   DOTNET_VERSION: '6.0.x'
+  SOLUTIONPATH: C:\Users\chinmay.mahajan\hello-world\hello-world.sln
+
 jobs:
   build:
 
     runs-on: windows-latest
 
     steps:
-    - name: checkout
-      uses: actions/checkout@v1
+    - name: checkout repository
+      uses: actions/checkout@v2
+
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: ${{ env.DOTNET_VERSION }}
-    - name: Install dependencies
-      run: dotnet restore
+    
     - name: Build
-      run: dotnet build --configuration Release --no-restore
+      run: dotnet build ${{ SOLUTIONPATH }}
+
     - name: Publish
       run: dotnet publish --configuration Release -o '${{env.PUBLISH_PATH}}/publish'
       
