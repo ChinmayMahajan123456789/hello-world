@@ -7,7 +7,7 @@ on:
 env:
   PUBLISH_PATH: '.'
   DOTNET_VERSION: '6.0.x'
-  SOLUTIONPATH: C:\Users\chinmay.mahajan\hello-world\hello-world.sln
+  SOLUTIONPATH: 'C:\Users\chinmay.mahajan\hello-world\hello-world.sln'
 
 jobs:
   build:
